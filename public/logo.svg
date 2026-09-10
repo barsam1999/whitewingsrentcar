@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200" width="400" height="200">
+  <!-- Background -->
+  <rect width="400" height="200" fill="white"/>
+  
+  <!-- Left Wing -->
+  <path d="M 80 95 Q 40 75 20 85 Q 40 80 60 88 Q 45 82 30 88 Q 50 85 70 92 Q 55 88 40 92 Q 60 90 80 95" fill="#D4AF37" opacity="0.9"/>
+  <path d="M 80 100 Q 40 85 20 92 Q 40 88 60 94 Q 45 90 30 94 Q 50 92 70 97 Q 55 94 40 97 Q 60 96 80 100" fill="#B8860B" opacity="0.7"/>
+  
+  <!-- Right Wing -->
+  <path d="M 320 95 Q 360 75 380 85 Q 360 80 340 88 Q 355 82 370 88 Q 350 85 330 92 Q 345 88 360 92 Q 340 90 320 95" fill="#D4AF37" opacity="0.9"/>
+  <path d="M 320 100 Q 360 85 380 92 Q 360 88 340 94 Q 355 90 370 94 Q 350 92 330 97 Q 345 94 360 97 Q 340 96 320 100" fill="#B8860B" opacity="0.7"/>
+  
+  <!-- Shield -->
+  <path d="M 200 40 L 260 60 L 260 120 Q 260 160 200 180 Q 140 160 140 120 L 140 60 Z" fill="#064E3B" stroke="#D4AF37" stroke-width="3"/>
+  
+  <!-- Shield inner border -->
+  <path d="M 200 50 L 252 67 L 252 118 Q 252 153 200 170 Q 148 153 148 118 L 148 67 Z" fill="none" stroke="#D4AF37" stroke-width="1" opacity="0.6"/>
+  
+  <!-- Car silhouette inside shield -->
+  <g transform="translate(200, 110)">
+    <!-- Car body -->
+    <path d="M -30 0 L -25 -8 L -15 -15 L 0 -18 L 15 -15 L 25 -8 L 30 0 L 30 5 L -30 5 Z" fill="#D4AF37"/>
+    <!-- Car roof -->
+    <path d="M -15 -15 L -10 -22 L 10 -22 L 15 -15" fill="#D4AF37" opacity="0.8"/>
+    <!-- Wheels -->
+    <circle cx="-18" cy="5" r="5" fill="#1a1a1a"/>
+    <circle cx="18" cy="5" r="5" fill="#1a1a1a"/>
+    <circle cx="-18" cy="5" r="2" fill="#D4AF37"/>
+    <circle cx="18" cy="5" r="2" fill="#D4AF37"/>
+    <!-- Windows -->
+    <path d="M -12 -14 L -8 -20 L -2 -20 L -2 -14 Z" fill="#064E3B" opacity="0.6"/>
+    <path d="M 2 -14 L 2 -20 L 8 -20 L 12 -14 Z" fill="#064E3B" opacity="0.6"/>
+  </g>
+  
+  <!-- Star on top of shield -->
+  <polygon points="200,45 203,52 210,52 205,57 207,64 200,60 193,64 195,57 190,52 197,52" fill="#D4AF37"/>
+  
+  <!-- Text: WHITE WINGS -->
+  <text x="200" y="30" text-anchor="middle" font-family="Georgia, serif" font-weight="bold" font-size="22" fill="#064E3B" letter-spacing="3">WHITE WINGS</text>
+  
+  <!-- Text: CAR RENTAL -->
+  <text x="200" y="195" text-anchor="middle" font-family="Georgia, serif" font-weight="600" font-size="14" fill="#D4AF37" letter-spacing="4">CAR RENTAL</text>
+</svg>
