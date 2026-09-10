@@ -14,7 +14,7 @@ export default function CarForSaleDetail() {
         <div className="text-center">
           <h1 className="text-3xl font-bold text-gray-900 mb-4">Vehicle Not Found</h1>
           <p className="text-gray-600 mb-6">The vehicle you're looking for doesn't exist.</p>
-          <Link to="/cars-for-sale" className="text-blue-600 font-semibold hover:text-blue-800">← Back to Cars for Sale</Link>
+          <Link to="/cars-for-sale" className="text-[#064E3B] font-semibold hover:text-[#D4AF37]">← Back to Cars for Sale</Link>
         </div>
       </div>
     );
@@ -29,9 +29,9 @@ export default function CarForSaleDetail() {
       <div className="bg-gray-50 border-b">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <nav className="flex items-center gap-2 text-sm text-gray-600">
-            <Link to="/" className="hover:text-blue-600">Home</Link>
+            <Link to="/" className="hover:text-[#064E3B]">Home</Link>
             <span>/</span>
-            <Link to="/cars-for-sale" className="hover:text-blue-600">Cars for Sale</Link>
+            <Link to="/cars-for-sale" className="hover:text-[#064E3B]">Cars for Sale</Link>
             <span>/</span>
             <span className="text-gray-900 font-medium">{car.make} {car.model}</span>
           </nav>
@@ -70,7 +70,7 @@ export default function CarForSaleDetail() {
                     <button
                       key={idx}
                       onClick={() => setCurrentImage(idx)}
-                      className={`w-3 h-3 rounded-full transition-all ${idx === currentImage ? 'bg-white scale-110' : 'bg-white/50'}`}
+                      className={`w-3 h-3 rounded-full transition-all ${idx === currentImage ? 'bg-[#D4AF37] scale-110' : 'bg-white/50'}`}
                     />
                   ))}
                 </div>
@@ -81,7 +81,7 @@ export default function CarForSaleDetail() {
                   <button
                     key={idx}
                     onClick={() => setCurrentImage(idx)}
-                    className={`w-20 h-16 rounded-lg overflow-hidden border-2 transition-all ${idx === currentImage ? 'border-blue-600' : 'border-transparent opacity-70 hover:opacity-100'}`}
+                    className={`w-20 h-16 rounded-lg overflow-hidden border-2 transition-all ${idx === currentImage ? 'border-[#D4AF37]' : 'border-transparent opacity-70 hover:opacity-100'}`}
                   >
                     <img src={img} alt="" className="w-full h-full object-cover" />
                   </button>
@@ -103,43 +103,43 @@ export default function CarForSaleDetail() {
               <p className="text-gray-500 text-lg mb-4">{car.year} Model</p>
 
               {/* Price */}
-              <div className="bg-blue-50 rounded-xl p-6 mb-6">
+              <div className="bg-green-50 rounded-xl p-6 mb-6 border border-[#064E3B]/10">
                 <p className="text-sm text-gray-500 mb-1">Asking Price</p>
-                <p className="text-4xl font-bold text-blue-600">AED {car.price.toLocaleString()}</p>
+                <p className="text-4xl font-bold text-[#064E3B]">AED {car.price.toLocaleString()}</p>
               </div>
 
               {/* Quick Specs */}
               <div className="grid grid-cols-2 gap-4 mb-8">
-                <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg">
-                  <Gauge size={20} className="text-blue-600" />
+                <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg border border-gray-100">
+                  <Gauge size={20} className="text-[#064E3B]" />
                   <div>
                     <p className="text-xs text-gray-500">Mileage</p>
                     <p className="font-semibold text-gray-900 text-sm">{car.mileage}</p>
                   </div>
                 </div>
-                <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg">
-                  <Calendar size={20} className="text-blue-600" />
+                <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg border border-gray-100">
+                  <Calendar size={20} className="text-[#064E3B]" />
                   <div>
                     <p className="text-xs text-gray-500">Transmission</p>
                     <p className="font-semibold text-gray-900 text-sm">{car.transmission}</p>
                   </div>
                 </div>
-                <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg">
-                  <Fuel size={20} className="text-blue-600" />
+                <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg border border-gray-100">
+                  <Fuel size={20} className="text-[#064E3B]" />
                   <div>
                     <p className="text-xs text-gray-500">Fuel Type</p>
                     <p className="font-semibold text-gray-900 text-sm">{car.fuelType}</p>
                   </div>
                 </div>
-                <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg">
-                  <Users size={20} className="text-blue-600" />
+                <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg border border-gray-100">
+                  <Users size={20} className="text-[#064E3B]" />
                   <div>
                     <p className="text-xs text-gray-500">Passengers</p>
                     <p className="font-semibold text-gray-900 text-sm">{car.passengers}</p>
                   </div>
                 </div>
-                <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg col-span-2">
-                  <MapPin size={20} className="text-blue-600" />
+                <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg border border-gray-100 col-span-2">
+                  <MapPin size={20} className="text-[#064E3B]" />
                   <div>
                     <p className="text-xs text-gray-500">Location</p>
                     <p className="font-semibold text-gray-900 text-sm">{car.location}</p>
@@ -151,7 +151,7 @@ export default function CarForSaleDetail() {
               <div className="flex flex-wrap gap-3">
                 <Link
                   to="/contact"
-                  className="flex-1 text-center bg-blue-600 text-white px-6 py-3.5 rounded-lg font-bold hover:bg-blue-700 transition-colors shadow-md"
+                  className="flex-1 text-center bg-[#064E3B] text-white px-6 py-3.5 rounded-lg font-bold hover:bg-[#065F46] transition-colors shadow-md"
                 >
                   CONTACT ABOUT THIS CAR
                 </Link>
@@ -159,9 +159,9 @@ export default function CarForSaleDetail() {
                   href={`https://wa.me/${companyInfo.whatsapp}?text=Hi, I'm interested in the ${car.year} ${car.make} ${car.model} for sale at AED ${car.price.toLocaleString()}.`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 text-center bg-green-500 text-white px-6 py-3.5 rounded-lg font-bold hover:bg-green-600 transition-colors shadow-md flex items-center justify-center gap-2"
+                  className="flex-1 text-center bg-green-600 text-white px-6 py-3.5 rounded-lg font-bold hover:bg-green-700 transition-colors shadow-md flex items-center justify-center gap-2"
                 >
-                  <MessageCircle size={18} /> WhatsApp
+                  <MessageCircle size={18} /> WHATSAPP
                 </a>
               </div>
             </div>
@@ -173,7 +173,8 @@ export default function CarForSaleDetail() {
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">About This Vehicle</h2>
+            <h2 className="text-2xl font-bold text-[#064E3B] mb-4">About This Vehicle</h2>
+            <div className="w-16 h-1 bg-[#D4AF37] mb-6"></div>
             <p className="text-gray-600 text-lg leading-relaxed">{car.description}</p>
           </div>
         </div>
@@ -184,7 +185,8 @@ export default function CarForSaleDetail() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div>
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">Specifications</h2>
+              <h2 className="text-2xl font-bold text-[#064E3B] mb-4">Specifications</h2>
+              <div className="w-16 h-1 bg-[#D4AF37] mb-6"></div>
               <div className="space-y-3">
                 {[
                   { label: 'Make', value: car.make },
@@ -206,11 +208,12 @@ export default function CarForSaleDetail() {
               </div>
             </div>
             <div>
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">Features</h2>
+              <h2 className="text-2xl font-bold text-[#064E3B] mb-4">Features</h2>
+              <div className="w-16 h-1 bg-[#D4AF37] mb-6"></div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {car.features.map((feature, idx) => (
                   <div key={idx} className="flex items-center gap-2">
-                    <Check size={16} className="text-blue-600 shrink-0" />
+                    <Check size={16} className="text-[#D4AF37] shrink-0" />
                     <span className="text-gray-700 text-sm">{feature}</span>
                   </div>
                 ))}
@@ -221,23 +224,24 @@ export default function CarForSaleDetail() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 bg-gradient-to-r from-blue-600 to-blue-800 text-white">
+      <section className="py-16 bg-[#064E3B] text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold mb-4">Interested in This Vehicle?</h2>
-          <p className="text-blue-100 text-lg mb-8">
+          <div className="w-20 h-1 bg-[#D4AF37] mx-auto mb-6"></div>
+          <p className="text-green-100 text-lg mb-8">
             Contact us to schedule a viewing or get more information.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Link to="/contact" className="bg-white text-blue-700 px-8 py-4 rounded-lg font-bold text-lg hover:bg-blue-50 transition-all shadow-lg">
-              Contact Us
+            <Link to="/contact" className="bg-[#D4AF37] text-[#064E3B] px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#E5C158] transition-all shadow-lg">
+              CONTACT US
             </Link>
             <a
               href={`https://wa.me/${companyInfo.whatsapp}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-green-500 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-green-600 transition-all shadow-lg"
+              className="bg-green-600 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-green-700 transition-all shadow-lg"
             >
-              WhatsApp
+              WHATSAPP
             </a>
           </div>
         </div>

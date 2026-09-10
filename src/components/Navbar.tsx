@@ -17,18 +17,12 @@ export default function Navbar() {
   const location = useLocation();
 
   return (
-    <header className="bg-white shadow-md sticky top-0 z-50">
+    <header className="bg-white shadow-md sticky top-0 z-50 border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2">
-            <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-800 rounded-full flex items-center justify-center">
-              <span className="text-white font-bold text-lg">WW</span>
-            </div>
-            <div className="hidden sm:block">
-              <h1 className="text-xl font-bold text-blue-900 leading-tight">White Wings</h1>
-              <p className="text-xs text-gray-500 -mt-0.5">Car Rental</p>
-            </div>
+          <Link to="/" className="flex items-center gap-3">
+            <img src="/logo.svg" alt="White Wings Car Rental" className="h-14 w-auto" />
           </Link>
 
           {/* Desktop Navigation */}
@@ -37,10 +31,10 @@ export default function Navbar() {
               <Link
                 key={link.path}
                 to={link.path}
-                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                className={`px-3 py-2 rounded-md text-sm font-semibold transition-colors ${
                   location.pathname === link.path
-                    ? 'text-blue-700 bg-blue-50'
-                    : 'text-gray-700 hover:text-blue-700 hover:bg-blue-50'
+                    ? 'text-[#064E3B] bg-green-50'
+                    : 'text-gray-800 hover:text-[#064E3B] hover:bg-green-50'
                 }`}
               >
                 {link.name}
@@ -52,14 +46,14 @@ export default function Navbar() {
           <div className="hidden lg:flex items-center gap-3">
             <a
               href={`tel:${companyInfo.phone}`}
-              className="flex items-center gap-1 text-sm font-medium text-gray-700 hover:text-blue-700"
+              className="flex items-center gap-1 text-sm font-medium text-gray-700 hover:text-[#064E3B]"
             >
               <Phone size={16} />
               <span>{companyInfo.phone}</span>
             </a>
             <Link
               to="/contact"
-              className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-5 py-2.5 rounded-lg font-semibold text-sm hover:from-blue-700 hover:to-blue-800 transition-all shadow-md hover:shadow-lg"
+              className="bg-[#064E3B] text-white px-5 py-2.5 rounded-lg font-bold text-sm hover:bg-[#065F46] transition-all shadow-md hover:shadow-lg border border-[#D4AF37]/30"
             >
               BOOK NOW
             </Link>
@@ -79,15 +73,19 @@ export default function Navbar() {
       {isOpen && (
         <div className="lg:hidden bg-white border-t">
           <div className="px-4 py-4 space-y-2">
+            {/* Mobile Logo */}
+            <div className="flex justify-center pb-4 border-b mb-4">
+              <img src="/logo.svg" alt="White Wings Car Rental" className="h-12 w-auto" />
+            </div>
             {navLinks.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
                 onClick={() => setIsOpen(false)}
-                className={`block px-4 py-3 rounded-lg text-sm font-medium transition-colors ${
+                className={`block px-4 py-3 rounded-lg text-sm font-semibold transition-colors ${
                   location.pathname === link.path
-                    ? 'text-blue-700 bg-blue-50'
-                    : 'text-gray-700 hover:text-blue-700 hover:bg-blue-50'
+                    ? 'text-[#064E3B] bg-green-50'
+                    : 'text-gray-800 hover:text-[#064E3B] hover:bg-green-50'
                 }`}
               >
                 {link.name}
@@ -104,7 +102,7 @@ export default function Navbar() {
               <Link
                 to="/contact"
                 onClick={() => setIsOpen(false)}
-                className="block text-center bg-gradient-to-r from-blue-600 to-blue-700 text-white px-5 py-3 rounded-lg font-semibold text-sm"
+                className="block text-center bg-[#064E3B] text-white px-5 py-3 rounded-lg font-bold text-sm"
               >
                 BOOK NOW
               </Link>

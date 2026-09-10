@@ -6,10 +6,14 @@ export default function CarsForSale() {
   return (
     <div>
       {/* Hero */}
-      <section className="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-950 text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="bg-[#064E3B] text-white py-20 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute inset-0" style={{ backgroundImage: 'repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(212,175,55,0.2) 35px, rgba(212,175,55,0.2) 70px)' }}></div>
+        </div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl lg:text-5xl font-bold mb-6">Cars for Sale</h1>
-          <p className="text-xl text-blue-200 max-w-3xl mx-auto">
+          <div className="w-20 h-1 bg-[#D4AF37] mx-auto mb-6"></div>
+          <p className="text-xl text-green-200 max-w-3xl mx-auto">
             Premium pre-owned vehicles available for purchase in Dubai
           </p>
         </div>
@@ -32,7 +36,7 @@ export default function CarsForSale() {
                       <span className="bg-red-600 text-white px-6 py-2 rounded-full font-bold text-lg">SOLD</span>
                     </div>
                   )}
-                  <div className="absolute top-3 right-3 bg-blue-600 text-white px-3 py-1.5 rounded-full text-sm font-bold">
+                  <div className="absolute top-3 right-3 bg-[#064E3B] text-white px-3 py-1.5 rounded-full text-sm font-bold">
                     AED {car.price.toLocaleString()}
                   </div>
                 </div>
@@ -57,14 +61,16 @@ export default function CarsForSale() {
                   <div className="mt-5 flex gap-3">
                     <Link
                       to={`/cars-for-sale/${car.slug}`}
-                      className="flex-1 text-center border border-blue-600 text-blue-600 px-4 py-2.5 rounded-lg font-semibold text-sm hover:bg-blue-50 transition-colors"
+                      className="flex-1 text-center border-2 border-[#064E3B] text-[#064E3B] px-4 py-2.5 rounded-lg font-semibold text-sm hover:bg-[#064E3B] hover:text-white transition-colors"
                     >
                       VIEW DETAILS
                     </Link>
                     <a
-                      href={`https://wa.me/${car.sold ? '' : ''}`}
+                      href={`https://wa.me/${companyInfo.whatsapp}?text=Hi, I'm interested in the ${car.year} ${car.make} ${car.model} for sale.`}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className={`flex-1 text-center px-4 py-2.5 rounded-lg font-semibold text-sm transition-colors ${
-                        car.sold ? 'bg-gray-300 text-gray-500 cursor-not-allowed' : 'bg-blue-600 text-white hover:bg-blue-700'
+                        car.sold ? 'bg-gray-300 text-gray-500 cursor-not-allowed' : 'bg-[#064E3B] text-white hover:bg-[#065F46]'
                       }`}
                     >
                       {car.sold ? 'SOLD' : 'CONTACT'}
@@ -76,19 +82,25 @@ export default function CarsForSale() {
           </div>
 
           {/* Sell Your Car CTA */}
-          <div className="mt-16 bg-gradient-to-r from-blue-600 to-blue-800 rounded-2xl p-10 text-center text-white">
-            <h2 className="text-2xl lg:text-3xl font-bold mb-4">Want to Sell Your Car?</h2>
-            <p className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
-              We buy quality pre-owned vehicles. Contact us to get a fair offer for your car.
-            </p>
-            <a
-              href={`https://wa.me/${companyInfo.whatsapp}?text=Hi, I would like to sell my car.`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block bg-white text-blue-700 px-8 py-4 rounded-lg font-bold text-lg hover:bg-blue-50 transition-all shadow-lg"
-            >
-              SELL YOUR CAR
-            </a>
+          <div className="mt-16 bg-[#064E3B] rounded-2xl p-10 text-center text-white relative overflow-hidden">
+            <div className="absolute inset-0 opacity-5">
+              <div className="absolute inset-0" style={{ backgroundImage: 'repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(212,175,55,0.3) 35px, rgba(212,175,55,0.3) 70px)' }}></div>
+            </div>
+            <div className="relative">
+              <h2 className="text-2xl lg:text-3xl font-bold mb-4">Want to Sell Your Car?</h2>
+              <div className="w-20 h-1 bg-[#D4AF37] mx-auto mb-6"></div>
+              <p className="text-green-100 text-lg mb-8 max-w-2xl mx-auto">
+                We buy quality pre-owned vehicles. Contact us to get a fair offer for your car.
+              </p>
+              <a
+                href={`https://wa.me/${companyInfo.whatsapp}?text=Hi, I would like to sell my car.`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-[#D4AF37] text-[#064E3B] px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#E5C158] transition-all shadow-lg"
+              >
+                SELL YOUR CAR
+              </a>
+            </div>
           </div>
         </div>
       </section>

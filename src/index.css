@@ -1,6 +1,12 @@
 @import "tailwindcss";
 
 @theme {
+  --color-brand-green: #064E3B;
+  --color-brand-green-light: #065F46;
+  --color-brand-green-dark: #022C22;
+  --color-brand-gold: #D4AF37;
+  --color-brand-gold-light: #E5C158;
+  --color-brand-gold-dark: #B8860B;
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
   --font-serif: 'Playfair Display', Georgia, serif;
 }
@@ -25,10 +31,10 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #94a3b8;
+  background: #064E3B;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #64748b;
+  background: #065F46;
 }

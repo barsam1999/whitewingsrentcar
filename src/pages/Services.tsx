@@ -22,7 +22,7 @@ const services = [
   },
   {
     icon: <Clock size={36} />,
-    title: 'Long-Term Rental',
+    title: 'Long-Term Car Rental',
     description: 'For rentals extending beyond a month, we offer customized long-term solutions tailored to your specific needs. Corporate clients and individuals benefit from our most competitive rates.',
     features: ['Custom pricing', 'Fleet management', 'Priority support', 'Vehicle swap options']
   },
@@ -56,10 +56,14 @@ export default function Services() {
   return (
     <div>
       {/* Hero */}
-      <section className="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-950 text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="bg-[#064E3B] text-white py-20 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute inset-0" style={{ backgroundImage: 'repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(212,175,55,0.2) 35px, rgba(212,175,55,0.2) 70px)' }}></div>
+        </div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl lg:text-5xl font-bold mb-6">Our Services</h1>
-          <p className="text-xl text-blue-200 max-w-3xl mx-auto">
+          <div className="w-20 h-1 bg-[#D4AF37] mx-auto mb-6"></div>
+          <p className="text-xl text-green-200 max-w-3xl mx-auto">
             Comprehensive car rental and sales solutions tailored to your needs
           </p>
         </div>
@@ -72,16 +76,16 @@ export default function Services() {
             {services.map((service, idx) => (
               <div key={idx} className={`flex flex-col lg:flex-row gap-10 items-center ${idx % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
                 <div className="flex-1">
-                  <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-100 text-blue-600 rounded-full mb-5">
+                  <div className="inline-flex items-center justify-center w-16 h-16 bg-[#064E3B] text-[#D4AF37] rounded-full mb-5">
                     {service.icon}
                   </div>
-                  <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4">{service.title}</h2>
+                  <h2 className="text-2xl lg:text-3xl font-bold text-[#064E3B] mb-4">{service.title}</h2>
                   <p className="text-gray-600 text-lg leading-relaxed mb-6">{service.description}</p>
                   <ul className="space-y-2">
                     {service.features.map((feature, fIdx) => (
                       <li key={fIdx} className="flex items-center gap-2 text-gray-700">
-                        <div className="w-5 h-5 bg-blue-100 rounded-full flex items-center justify-center shrink-0">
-                          <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
+                        <div className="w-5 h-5 bg-[#D4AF37]/20 rounded-full flex items-center justify-center shrink-0">
+                          <div className="w-2 h-2 bg-[#D4AF37] rounded-full"></div>
                         </div>
                         {feature}
                       </li>
@@ -89,8 +93,8 @@ export default function Services() {
                   </ul>
                 </div>
                 <div className="flex-1 flex justify-center">
-                  <div className="w-64 h-64 bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl flex items-center justify-center">
-                    <div className="text-blue-600 transform scale-[3]">
+                  <div className="w-64 h-64 bg-gradient-to-br from-green-50 to-green-100 rounded-2xl flex items-center justify-center border border-[#064E3B]/10">
+                    <div className="text-[#064E3B] transform scale-[3]">
                       {service.icon}
                     </div>
                   </div>
@@ -102,18 +106,19 @@ export default function Services() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 bg-gradient-to-r from-blue-600 to-blue-800 text-white">
+      <section className="py-16 bg-[#064E3B] text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold mb-4">Need a Custom Solution?</h2>
-          <p className="text-blue-100 text-lg mb-8">
+          <div className="w-20 h-1 bg-[#D4AF37] mx-auto mb-6"></div>
+          <p className="text-green-100 text-lg mb-8">
             We're happy to create a rental package tailored to your specific requirements. Contact us today.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Link to="/contact" className="bg-white text-blue-700 px-8 py-4 rounded-lg font-bold text-lg hover:bg-blue-50 transition-all shadow-lg">
-              Contact Us
+            <Link to="/contact" className="bg-[#D4AF37] text-[#064E3B] px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#E5C158] transition-all shadow-lg">
+              CONTACT US
             </Link>
-            <Link to="/fleet" className="border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white/10 transition-all">
-              View Our Fleet
+            <Link to="/fleet" className="border-2 border-[#D4AF37] text-[#D4AF37] px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#D4AF37]/10 transition-all">
+              VIEW OUR FLEET
             </Link>
           </div>
         </div>
